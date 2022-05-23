@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dhanu 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dhanu
+  template:
+    metadata:
+      labels:
+        app: dhanu 
+    spec:
+      containers:
+        - name: dhanu 
+          image: dockeraz.azurecr.io/dhanu
+          ports:
+          - containerPort: 8282
